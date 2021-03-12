@@ -3,6 +3,9 @@
 A Terraform module to create Cisco CSR 1000V router network device
 on the Equinix platform.
 
+![Terraform status](https://github.com/equinix/terraform-equinix-csr1000v/workflows/Terraform/badge.svg)
+![License](https://img.shields.io/github/license/equinix/terraform-equinix-csr1000v)
+
 Supported device modes:
 
 | Management Mode | License mode | Notes |
@@ -86,7 +89,7 @@ Secondary device map attributes:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|----------|
-|enabled|Value that determines if secondary device will be created|`bool`|`false`|no|
+|enabled|Value that determines if secondary device shall be created|`bool`|`false`|no|
 |license_token|License token applicable for Equinix managed device in BYOL licensing mode|`string`|`""`|no|
 |metro_code|Two-letter secondary device location's metro code|`string`|`""`|yes|
 |account_number|Billing account number for a device. If not provided, active account for a device metro code will be used|`string`|`0`|no|

@@ -1,0 +1,28 @@
+name: Terraform
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  terraform:
+    name: Terraform
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        shell: bash
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: ">= 0.13"
+      - name: Init Terraform
+        run: terraform init
+      - name: Validate Terraform configurations
+        run: terraform validate
+      - name: Validate Terraform configuration files formatting
+        run: if ! terraform fmt -list=false -check; then echo "Some terraform files need be formatted, run 'terraform fmt' to fix"; exit 1; fi
