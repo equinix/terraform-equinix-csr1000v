@@ -80,8 +80,8 @@ variable "hostname" {
   description = "Device hostname prefix"
   type        = string
   validation {
-    condition     = length(var.hostname) >= 2 && length(var.hostname) <= 20
-    error_message = "Device hostname should consist of 2 to 20 characters."
+    condition     = length(var.hostname) >= 2 && length(var.hostname) <= 10
+    error_message = "Device hostname should consist of 2 to 10 characters."
   }
 }
 
@@ -140,8 +140,8 @@ variable "secondary" {
     error_message = "Key 'enabled' has to be defined for secondary device."
   }
   validation {
-    condition     = !try(var.secondary.enabled, false) || try(length(var.secondary.hostname) >= 2 && length(var.secondary.hostname) <= 50, false)
-    error_message = "Key 'hostname' has to be between 2 and 20 characters long."
+    condition     = !try(var.secondary.enabled, false) || try(length(var.secondary.hostname) >= 2 && length(var.secondary.hostname) <= 10, false)
+    error_message = "Key 'hostname' has to be between 2 and 10 characters long."
   }
   validation {
     condition     = !try(var.secondary.enabled, false) || can(regex("^[A-Z]{2}$", var.secondary.metro_code))

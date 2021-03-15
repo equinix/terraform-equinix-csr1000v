@@ -10,6 +10,10 @@ jobs:
   terraform:
     name: Terraform
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        directory: [".", "./example"]
     defaults:
       run:
         shell: bash
@@ -22,7 +26,10 @@ jobs:
           terraform_version: ">= 0.13"
       - name: Init Terraform
         run: terraform init
+        working-directory: ${{ matrix.directory }}
       - name: Validate Terraform configurations
         run: terraform validate
+        working-directory: ${{ matrix.directory }}
       - name: Validate Terraform configuration files formatting
         run: if ! terraform fmt -list=false -check; then echo "Some terraform files need be formatted, run 'terraform fmt' to fix"; exit 1; fi
+        working-directory: ${{ matrix.directory }}
