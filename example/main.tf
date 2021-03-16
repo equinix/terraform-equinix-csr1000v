@@ -1,5 +1,4 @@
 provider "equinix" {
-  endpoint      = "https://uatapi.equinix.com"
   client_id     = var.equinix_client_id
   client_secret = var.equinix_client_secret
 }
