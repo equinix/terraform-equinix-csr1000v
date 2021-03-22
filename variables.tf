@@ -131,6 +131,16 @@ variable "ssh_key" {
   }
 }
 
+variable "interface_count" {
+  description = "Number of network interfaces on a device"
+  type        = number
+  default     = 0
+  validation {
+    condition     = var.interface_count == 0 || var.interface_count == 10 || var.interface_count == 24
+    error_message = "Device interface count has to be either 10 or 24."
+  }
+}
+
 variable "secondary" {
   description = "Secondary device attributes"
   type        = map(any)

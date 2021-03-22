@@ -61,6 +61,7 @@ resource "equinix_network_device" "this" {
   notifications        = var.notifications
   acl_template_id      = var.acl_template_id != "" ? var.acl_template_id : null
   additional_bandwidth = var.additional_bandwidth > 0 ? var.additional_bandwidth : null
+  interface_count      = var.interface_count > 0 ? var.interface_count : null
   dynamic "ssh_key" {
     for_each = var.ssh_key.username != "" ? [1] : []
     content {

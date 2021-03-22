@@ -83,6 +83,7 @@ module "csr1000v" {
 |notifications|List of email addresses that will receive notifications about device|`list(string)`|n/a|yes|
 |acl_template_id|Identifier of a network ACL template that will be applied on a device|`string`|`""`|no|
 |additional_bandwidth|Amount of additional internet bandwidth for a device, in Mbps|`number`|`0`|no|
+|interface_count|Device interface count: either `10` or `24`|`number`|`10`|no|
 |secondary|Map of secondary device attributes in redundant setup|`map`|N/A|no|
 
 Secondary device map attributes:
