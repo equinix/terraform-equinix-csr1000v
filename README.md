@@ -84,7 +84,15 @@ module "csr1000v" {
 |acl_template_id|Identifier of a network ACL template that will be applied on a device|`string`|`""`|no|
 |additional_bandwidth|Amount of additional internet bandwidth for a device, in Mbps|`number`|`0`|no|
 |interface_count|Device interface count: either `10` or `24`|`number`|`10`|no|
+|ssh_key|Map of SSH public key attributes|`map`|N/A|no|
 |secondary|Map of secondary device attributes in redundant setup|`map`|N/A|no|
+
+SSH key map attributes:
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|----------|
+|username|Username associated with a given public key|`string`|`""`|yes|
+|key_name|The name of the SSH public key|`string`|`""`|yes|
 
 Secondary device map attributes:
 
