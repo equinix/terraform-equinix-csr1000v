@@ -5,7 +5,7 @@ provider "equinix" {
 
 module "csr1000v" {
   source               = "equinix/csr1000v/equinix"
-  version              = "1.0.0-beta"
+  version              = "1.1.0"
   name                 = "tf-csr1000v"
   metro_code           = var.metro_code_primary
   platform             = "medium"
