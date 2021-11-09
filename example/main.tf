@@ -10,6 +10,7 @@ module "csr1000v" {
   metro_code           = var.metro_code_primary
   platform             = "medium"
   software_package     = "IPBASE"
+  software_version     = "16.09.02"
   term_length          = 1
   notifications        = ["test@test.com"]
   throughput           = 1

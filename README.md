@@ -50,6 +50,7 @@ module "csr1000v" {
   metro_code       = "SV"
   platform         = "medium"
   software_package = "IPBASE"
+  software_version = "16.09.02"
   throughput       = 1
   throughput_unit  = "Gbps"
   name             = "tf-tst-csr1000v"
@@ -72,6 +73,7 @@ module "csr1000v" {
 |account_number|Billing account number for a device. If not provided, active account for a device metro code will be used|`string`|`0`|no|
 |platform|Device hardware platform flavor: `small`, `medium`, `large`|`string`|`""`|yes|
 |software_package|Device software package: `APPX`, `AX`, `IPBASE`, `SEC`|`string`|`""`|yes|
+|software_version|Device software Version: `16.09.02`, `16.09.03`, `16.09.05`, `16.12.03`|`string`|`""`|no|
 |self_managed|Determines device management mode: self-managed or Equinix managed|`bool`|`false`|no|
 |byol|Determines device licensing mode: bring your own license or subscription|`bool`|`false`|no|
 |license_token|License token applicable for Equinix managed device in BYOL licensing mode|`string`|`""`|no|

@@ -36,6 +36,7 @@ data "equinix_network_device_platform" "this" {
 data "equinix_network_device_software" "this" {
   device_type = data.equinix_network_device_type.this.code
   packages    = [var.software_package]
+  version_regex = var.software_version
   stable      = true
   most_recent = true
 }
